@@ -138,16 +138,7 @@ elif selected_option == "Land Information":
     
     # Create a map of India with state boundaries
     m = folium.Map(location=[20.5937, 78.9629], zoom_start=5)  # Centered on India, you can adjust the zoom level
-
-    # You'll need the GeoJSON data of Indian states and the DBF file. Make sure to provide the correct file paths.
-    geojson_path = r"Uttarakhand.geojson"  # Replace with the actual file paths
-
-    folium.GeoJson(
-        geojson_path,
-        name='geojson'
-    ).add_to(m)
-
-    
+ 
     # Centering the map on the page
     st.write('<h3 align="center">Map of Indian States</h3>', unsafe_allow_html=True)
 
@@ -177,7 +168,7 @@ elif selected_option == "Land Information":
         """)
 
     # Add an image to the second column
-    imagSe = Image.open(r"Files/home-ins.png")
+    image = Image.open(r"Files\home-ins.png")
     # Replace 'path_to_your_image.png' with your actual image file path
     col2.image(image,width=400)
 
@@ -193,7 +184,7 @@ elif selected_option == "Land Information":
         return pd.read_csv(file_path)
 
     # Dummy data for the dropdown
-    states = ['Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhatisgarh', 'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jharkhand', 'Karnataka', 'Kerala', 'Madhya Pradesh','Maharastra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Odissa', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura', 'Uttar Pradesh', 'UttaraKhand', 'West Bengal']  # Add all 29 states
+    states = ['Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhatisgarh', 'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jharkhand', 'Karnataka', 'Kerala', 'Madhya Pradesh','Maharastra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Odissa', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura']  # Add all 25 states
 
     # Main function
     def main():
@@ -225,11 +216,6 @@ elif selected_option == "Land Information":
         main()
 
 
-
-# ... (the rest of your code)
-
-# Move the chart code to the "Dashboard" page
-# ...
 
 elif selected_option == "Dashboard":
     st.markdown("<h1 style='text-align: center; color: black;'>Dashboard</h>", unsafe_allow_html=True)
@@ -301,7 +287,7 @@ elif selected_option == "Dashboard":
         return df
 
     # Dummy data for the dropdown
-    states = ['Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhatisgarh', 'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jharkhand', 'Karnataka', 'Kerala', 'Madhya Pradesh','Maharastra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Odissa', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura', 'Uttar Pradesh', 'UttarKhand', 'West Bengal']  # Add all 29 states
+    states = ['Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhatisgarh', 'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jharkhand', 'Karnataka', 'Kerala', 'Madhya Pradesh','Maharastra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Odissa', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura']  # Add all 29 states
 
     # Main function
     def main():
